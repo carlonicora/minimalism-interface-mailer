@@ -6,15 +6,23 @@ use CarloNicora\Minimalism\Interfaces\Mailer\Objects\Recipient;
 interface EmailInterface
 {
     /**
+     * @param Recipient $sender
      * @param string|null $subject
      * @param string|null $body
      * @param string $contentType
      */
     public function __construct(
+        Recipient $sender,
         ?string $subject=null,
         ?string $body=null,
         string $contentType = 'text/html',
     );
+
+    /**
+     * @return string
+     */
+    public function getContentType(
+    ): string;
 
     /**
      * @param string $subject
@@ -38,16 +46,10 @@ interface EmailInterface
     ): void;
 
     /**
-     * @return string
+     * @return Recipient
      */
-    public function getSenderEmail(
-    ): string;
-
-    /**
-     * @return string|null
-     */
-    public function getSenderName(
-    ): ?string;
+    public function getSender(
+    ): Recipient;
 
     /**
      * @return string
