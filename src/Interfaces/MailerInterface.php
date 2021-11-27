@@ -4,11 +4,11 @@ namespace CarloNicora\Minimalism\Interfaces\Mailer\Interfaces;
 interface MailerInterface
 {    /**
      * @param string $senderEmail
-     * @param string $senderName
+     * @param string|null $senderName
      */
     public function setSender(
         string $senderEmail,
-        string $senderName,
+        ?string $senderName=null,
     ):void;
 
     /**
