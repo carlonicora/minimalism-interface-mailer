@@ -6,4 +6,5 @@ enum RecipientType
     case To;
     case Cc;
     case Bcc;
+    case Sender;
 }
