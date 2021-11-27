@@ -1,7 +1,9 @@
 <?php
 namespace CarloNicora\Minimalism\Interfaces\Mailer\Interfaces;
 
-interface MailerInterface
+use CarloNicora\Minimalism\Interfaces\ServiceInterface;
+
+interface MailerInterface extends ServiceInterface
 {
     /**
      * @param EmailInterface $email
